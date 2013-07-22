@@ -1,5 +1,7 @@
-<?php include("header.php"); ?>
-<?php include("menu.php"); ?>
+<?php 
+	include("header.php");
+	include("menu.php");
+ ?>
 
 <!-- start of hero unit container -->
 <center>
@@ -10,10 +12,24 @@
 </center>
 
 <!-- end of hero unit container -->
-
+<?php
+				session_start();
+				if( isset($_SESSION['ERRMSG_ARR']) && is_array($_SESSION['ERRMSG_ARR']) && count($_SESSION['ERRMSG_ARR']) >0 )
+				{
+					echo '<div id ="messageBox" class="alert alert-error"><a class="close" data-dismiss="alert" href="#">×</a><ul>';
+					foreach($_SESSION['ERRMSG_ARR'] as $msg) 
+					{
+						echo '<li>',$msg,'</li>'; 
+					}
+				echo '</ul></div>';
+				unset($_SESSION['ERRMSG_ARR']);
+				unset($_SESSION['SESS_MEMBER_ID']);
+				}
+				session_destroy();
+			?>
 <div class="container">
 <div class="row">
-<form class="form-horizontal" action='' method="POST">
+<form class="form-horizontal" action='login_exec.php' method="POST">
   <fieldset>
     <div id="legend">
       <legend class="">Login</legend>
