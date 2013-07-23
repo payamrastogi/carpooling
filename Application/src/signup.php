@@ -2,8 +2,8 @@
 	include("header.php"); 
 	include("menu.php"); 
 	include ("connect.php");
-	require($_SERVER['DOCUMENT_ROOT'].'carpooling/class.phpmailer.php');
-	require($_SERVER['DOCUMENT_ROOT'].'carpooling//class.smtp.php');
+	require($_SERVER['DOCUMENT_ROOT'].'/carpooling/class.phpmailer.php');
+	require($_SERVER['DOCUMENT_ROOT'].'/carpooling//class.smtp.php');
 	if (isset($_POST['formsubmitted'])) 
 	{	
 	 	$error = array();//Declare An Array to store any error message
