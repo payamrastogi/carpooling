@@ -106,13 +106,15 @@ include("menu.php");
         <label class="control-label">Start Time</label>
         <div class="controls">
           <input id="startTime" name="startTime" type="text" placeholder="Start Time" class="input-xlarge" required="">
-           <div class="input-append bootstrap-timepicker">
-            <input id="timepicker1" type="text" class="input-small">
+           <div class="input-append">
+            <input type="text" value="15:00" class="timepicker" />
             <span class="add-on"><i class="icon-time"></i></span>
         </div>
         </div>
       </div>
-
+	  <script>
+	$('.timepicker').timepicker();
+</script>
       <!-- Text input-->
       <div class="control-group">
         <label class="control-label">Return Time</label>
@@ -151,12 +153,8 @@ include("menu.php");
           <button id="submit" name="submit" class="btn btn-primary">Post Ad</button>
         </div>
       </div>
-
     </fieldset>
   </form>
 </div>
-
-        <script type="text/javascript">
-            $('#timepicker1').timepicker();
-        </script>
+	
 <?php include("footer.php"); ?>
