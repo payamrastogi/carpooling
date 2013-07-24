@@ -78,10 +78,10 @@
 					$mail->SMTPSecure = "ssl";               #sets the prefix to the server
 					$mail->Host  = "smtp.gmail.com";         #sets GMAIL as the SMTP server
 					$mail->Port       = 465;                 #set the SMTP port
-					$mail->Username   = "";                  #your gmail username
-					$mail->Password   = "";                  #Your gmail password
-					$mail->From       = "";                  #your gmail id
-					$mail->FromName   = "";                  #your name
+					$mail->Username   = "arpit625";                  #your gmail username
+					$mail->Password   = "lnmiit@2302	";                  #Your gmail password
+					$mail->From       = "rpit625@gmail.com";                  #your gmail id
+					$mail->FromName   = "Arpit Gupta";                  #your name
 					$mail->Subject    = "Verify your Email Account";
 					$mail->WordWrap   = 50;
 					$mail->AddAddress($Email,$username);
