@@ -39,18 +39,18 @@
                     <li><a href="postAd.php"><i class="icon-search"></i> Post Ad</a></li>
 
                   </ul>
-                  <div class="pull-right">
-                    <ul class="nav pull-right">
-                      <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, Arpit <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                          <li><a href="profile.php"><i class="icon-cog"></i> Preferences</a></li>
-                          <li><a href="#"><i class="icon-envelope"></i> Contact Support</a></li>
-                          <li class="divider"></li>
-                          <li><a href="#"><i class="icon-off"></i> Logout</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
+
+  <div class="btn-group pull-right">
+          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="icon-user"></i> Welcome Arpit <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="profile.php"><i class="icon-wrench"></i> Settings</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><i class="icon-share"></i> Logout</a></li>
+          </ul>
+        </div>
+
 
                 <!-- </div> -->
               </div>
