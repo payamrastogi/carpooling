@@ -1,0 +1,292 @@
+
+<!DOCTYPE html />
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<head>
+<title>demo - smooth scrolling javascript to different parts of same page</title>
+<meta name="description" content="Use of javascript to add smooth scrolling to take user to different part on the same page, to make a go to top link, to scroll to div in same page." />
+<meta name="keywords" content="scroll to, jquery scroll to, scroll to div, javascript #links, scroll to different part of page, go to different part of page" />
+<style type="text/css">
+body   
+{
+    margin:0; padding:0;
+    font-size: .80em;
+    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    color: #696969;
+	background:#eee url(images/retina_wood.png) repeat;
+}
+
+#container{width:150%;}
+
+.box{width:20%; margin:5%;
+    border:10px solid #ddd;-moz-border-radius:6px;-webkit-border-radius:6px;border-radius:6px;
+    background:#f9f9f9;
+    box-shadow:3px 3px 5px #C8D2C8;
+	float:left;
+}
+.fleft{float:left;}
+.clr{clear:both;}
+.inPadd{padding:20px;}
+
+.nav ul{margin:0; padding:0;}
+.nav ul li{list-style-type:none; float:left; margin:5px;}
+.nav ul li a{display:block; background: #ddd; padding:10px; text-decoratin:none; border:1px solid #ccc; box-shadow:3px 3px 5px #aaa;}
+
+.content {width:80%; padding:10%;}
+
+.info {width: 800px; margin: 10px; padding:10px; background:#ddd; color:#696969;}
+.info a{color:#444;}
+</style>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("a.js_onPageLink").bind("click", function (event) {
+		event.preventDefault ? event.preventDefault() : event.returnValue = false;
+		var target = $(this).attr("href");
+		$("html, body").stop().animate({
+				scrollLeft: $(target).offset().left,
+				scrollTop: $(target).offset().top
+			}, 1200);
+	});
+});
+</script>
+<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-29439725-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script></head>
+<body>
+<center>
+<div class="info">
+Continue to the article :<a href="http://webdeveloperswall.com/javascript/scrolling-to-different-areas-on-same-page" title="jquery scroll to">Scrolling to different areas on same page</a>
+</div>
+</center>
+<div id="container">
+	<div id="box1" class="box">
+		<div class="nav">
+			<ul>
+				<li><a class="js_onPageLink" href="#box1">What.</a></li>
+				<li><a class="js_onPageLink" href="#box5">Why.</a></li>
+				<li><a class="js_onPageLink" href="#box10">How.</a></li>
+			</ul>
+			<div class="clr"></div>
+		</div>
+		<div class="clr"></div>
+		<div class="content">
+		<h3>What?.</h3>
+			<p>Carpooling (also known as car-sharing, ride-sharing, lift-sharing and covoiturage), is the sharing of car journeys so that more than one person travels in a car.</p>
+		</div>
+	</div>
+	
+	<div id="box2" class="box">
+		<div class="nav">
+			<ul>
+				<li><a class="js_onPageLink" href="#box1">What.</a></li>
+				<li><a class="js_onPageLink" href="#box5">Why.</a></li>
+				<li><a class="js_onPageLink" href="#box10">How.</a></li>
+			</ul>
+			<div class="clr"></div>
+		</div>
+		<div class="clr"></div>
+		<div class="content">
+			<img src="./img/Trafficjam1.jpg" />
+		</div>
+	</div>
+	
+	<div id="box3" class="box">
+		<div class="nav">
+			<ul>
+				<li><a class="js_onPageLink" href="#box1">What.</a></li>
+				<li><a class="js_onPageLink" href="#box5">Why.</a></li>
+				<li><a class="js_onPageLink" href="#box10">How.</a></li>
+			</ul>
+			<div class="clr"></div>
+		</div>
+		<div class="clr"></div>
+		<div class="content">
+			
+		</div>
+	</div>
+	
+	<div id="box4" class="box">
+		<div class="nav">
+			<ul>
+				<li><a class="js_onPageLink" href="#box1">What.</a></li>
+				<li><a class="js_onPageLink" href="#box5">Why.</a></li>
+				<li><a class="js_onPageLink" href="#box10">How.</a></li>
+			</ul>
+			<div class="clr"></div>
+		</div>
+		<div class="clr"></div>
+		<div class="content">
+			
+			
+		</div>
+	</div>
+	
+	<div id="box5" class="box">
+		<div class="nav">
+			<ul>
+				<li><a class="js_onPageLink" href="#box1">What.</a></li>
+				<li><a class="js_onPageLink" href="#box5">Why.</a></li>
+				<li><a class="js_onPageLink" href="#box10">How.</a></li>
+			</ul>
+			<div class="clr"></div>
+		</div>
+		<div class="clr"></div>
+		<div class="content">
+			<h2>Why?.</h2>
+			<h3>Carpooling will save You money</h3>
+			<p>Carpooling allows you to share the cost of gas and parking, cutting your expenses by nearly 50% or more; the more occupants in your carpool the more you save.  Carpooling is also socially economical.  Not only will you be saving, but you will also help reduce the costs we all pay towards the construction of new roads, road maintenance and air pollution related health costs.</p>
+			
+			<h3>It’s good for your health</h3>
+			<p>According to a survey, air pollution caused by vehicular travel is linked to a number of health concerns including respiratory diseases, cardiovascular disease, allergies and neurological effects.  By carpooling, you help reduce these health risks for yourself and everyone else. Research also suggests that carpooling is less stressful than commuting alone.</p>
+			
+			<h3>Reduced traffic congestion if more people carpool</h3>
+			<p>This is a long term benefit and would be visible if a large number of people start carpooling. The more people carpool, the lesser will be the heavy congestion on the roads.</p>
+
+			<h3>Carpooling is better for the environment</h3>
+			<p>Having fewer cars on the road means reduced Greenhouse Gas (GHG) emissions and improved air quality.</p>	
+
+			<h3>Carpooling is convenient</h3>
+			<p>Carpooling provides commuting convenience comparable to driving alone, with less stress and with the added bonus of companionship while you’re commuting.  Carpooling partners establish their own unique rules that best meet the needs of their carpool.</p>
+
+			<h3>Have better control of your work schedule</h3>
+			<p>This is easy to miss, but in the daily grind your work can control some of your schedule. To lead a richer and more fulfilling life, experts agree you need to be in control of your schedule instead. Carpooling is a commitment which may help your resolve to be on top of your work schedule.</p>
+
+			<h3>Grow your social network</h3>
+			<p>Carpooling is a great way to make new friends!</p>
+		</div>
+	</div>
+	
+	<div id="box6" class="box">
+		<div class="nav">
+			<ul>
+				<li><a class="js_onPageLink" href="#box1">What.</a></li>
+				<li><a class="js_onPageLink" href="#box5">Why.</a></li>
+				<li><a class="js_onPageLink" href="#box10">How.</a></li>
+			</ul>
+			<div class="clr"></div>
+		</div>
+		<div class="clr"></div>
+		<div class="content">
+		<h2>Step 7</h2>
+			<h3>Keep everyone in touch.</h3> 
+<p>Make a list of everyone in the carpool and how they can be contacted. If anyone doesn't need a ride or can't drive, it's important to have a chain of communication set up to prevent misunderstandings and inconvenience.</p>
+			
+		</div>
+	</div>
+	
+	<div id="box7" class="box">
+		<div class="nav">
+			<ul>
+				<li><a class="js_onPageLink" href="#box1">What.</a></li>
+				<li><a class="js_onPageLink" href="#box5">Why.</a></li>
+				<li><a class="js_onPageLink" href="#box10">How.</a></li>
+			</ul>
+			<div class="clr"></div>
+		</div>
+		<div class="clr"></div>
+		<div class="content">
+		<h3>Step 3-4-5</h3>
+			<h3>Set up a schedule.</h3>
+			<p>Figure out what time to meet, or what times people will get picked up. This might take a little trial and error, so be conservative when you start.</p>
+
+			<h3>Calculate the costs.</h3>
+			<p>For every day that you're carpooling, you should know who's driving and for how many miles. (If you all meet at the same spot every day, the number of miles won't vary.)</p>
+
+			<h3>Decide how people will pay up.</h3>
+			<p>For each day on your carpooling schedule, you should now know how much the driver is owed. Make a list for each day of the carpooling schedule, and divide the cost by the number of people in the carpool for that day--that'll be how much each person owes the driver on that day.</p>		
+			<li><a class="js_onPageLink" href="#box9">Next Step...</a></li>
+		</div>
+	</div>
+	
+	<div id="box8" class="box">
+		<div class="nav">
+			<ul>
+				<li><a class="js_onPageLink" href="#box1">What.</a></li>
+				<li><a class="js_onPageLink" href="#box5">Why.</a></li>
+				<li><a class="js_onPageLink" href="#box10">How.</a></li>
+			</ul>
+			<div class="clr"></div>
+		</div>
+		<div class="clr"></div>
+		<div class="content">
+		
+				
+		</div>
+	</div>
+	
+	<div id="box9" class="box">
+		<div class="nav">
+			<ul>
+				<li><a class="js_onPageLink" href="#box1">What.</a></li>
+				<li><a class="js_onPageLink" href="#box5">Why.</a></li>
+				<li><a class="js_onPageLink" href="#box10">How.</a></li>
+			</ul>
+			<div class="clr"></div>
+		</div>
+		<div class="clr"></div>
+		<div class="content">
+		<h2>Step 6</h2>
+			<h3>Make some ground rules.</h3>
+			<p>Ideally, you should have a little meeting to discuss these issues, or else they could create some discomfort and disagreements down the line:
+				1. smoking in the car
+				2. choice of music
+				3. how long you wait if someone's late
+				4. payment dates/deadlines
+				5. food and drink in the car
+				6. unscheduled stops
+				7. work gossip
+				8. talking on cell phones
+				9. put on perfume/cologne AFTER carpooling</p>
+			<li><a class="js_onPageLink" href="#box6">Next Step...</a></li>
+		</div>
+	</div>
+	
+	<div id="box10" class="box">
+		<div class="nav">
+			<ul>
+				<li><a class="js_onPageLink" href="#box1">What.</a></li>
+				<li><a class="js_onPageLink" href="#box5">Why.</a></li>
+				<li><a class="js_onPageLink" href="#box10">How.</a></li>
+			</ul>
+			<div class="clr"></div>
+		</div>
+		<div class="clr"></div>
+		<div class="content">
+		<h2>How?.</h2>
+		<h3>Step 1 & 2</h3>
+			<h3>Decide on a departure point.</h3>
+				<p>The first step is to figure out where everyone will meet. You have three options here, each with their pros and cons:
+				1. The home of the driver. This is the ideal arrangement if everybody lives walking distance from each other, but it can get confusing if people take turns driving.
+				2. A convenient location, such as a park-and-ride lot next to the highway, or a lot that's centrally located among all of the participants.
+				3. Driver picks everyone up. Again, this works best if the participants live close together, and it can be impractical if you rotate drivers (like if the person who lives closest to the destination has to drive 10 minutes further away just to pick someone up).
+				4. An added bonus is that the people who aren't driving that day can be completely car-free, possibly letting someone else in the house use it, which can enable some households to give up one of their cars; this will help you save money.</p>
+
+				<h3>Decide who's driving.</h3>
+				<p>One person can drive all the time, while the riders chip in for gas and maintenance, or everyone can take turns driving. This can depend on a few different factors:
+
+				1. Who has the most fuel efficient car? If one person in the carpool has a gas guzzler and another person has a hybrid, then it might be in the group's best interest to use the hybrid more often, because then everyone pays less for gas. This does, however, put more wear and tear on the hybrid.
+				2. Who has the most comfortable car? If you carpool every day with several people for a long commute, a spacious interior might make things a little more enjoyable for everyone. There might also be the awkward situation in which one person has an uncomfortable car (no A/C or heat, for example).
+				3. Who's in the best location? Sometimes it makes the most sense for the person who's furthest away from the destination to pick everyone up, presuming the homes are on the way to the destination.</p>
+				<a class="js_onPageLink" href="#box7">Next Steps...</a>
+		</div>
+	</div>
+<div style="clear:both;"></div>
+</div>
+<center>
+<div class="info">
+Continue to the article :<a href="http://webdeveloperswall.com/javascript/scrolling-to-different-areas-on-same-page" title="jquery scroll to">Scrolling to different areas on same page</a>
+</div>
+</center>
+</body>
+</html>
