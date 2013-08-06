@@ -20,10 +20,15 @@
 #example td:hover {
     cursor: pointer;
 }
-			#panel1,#panel2,#panel3
+#panel1,#panel2,#panel3
 {
-padding:50px;
+padding:0px;
 display:none;
+}
+.nodisplay tr td
+{
+	background-color: #ffffff;
+	padding: 0px 0px;
 }
 		</style>
 		<script>
@@ -31,12 +36,13 @@ display:none;
 
     $('#example tr').click(function() {
         var href = $(this).find("a").attr("href");
+		//alert(href);
 		var div = $(this).find("div").attr("id");
 		//alert(div);
         if(href) {
            // window.location = href;
 		 // alert(href);
-		   $("#"+div).slideToggle();
+		   $("#"+href).slideToggle();
         }
     });
 
@@ -53,26 +59,30 @@ display:none;
   	  <th>Price</th>	
 	</tr>
 <tr>
-    <td><a href="apples">Edit</a></td>
-    <td><div id="panel1">Apples</div></td>
+    <td><a href="panel1">Edit</a></td>
     <td>Blah blah blah blah</td>
     <td>10.23</td>
 </tr>
+<tr class="nodisplay">
+	 <td class="nodisplay"><div id="panel1">Apples</div></td>
+</tr>
 <tr>
-    <td><a href="bananas">Edit</a></td>
-    <td><div id="panel2">Bananas</div></td>
+    <td><a href="panel2">Edit</a></td>
     <td>Blah blah blah blah</td>
     <td>11.45</td>
 </tr>
+<tr class="nodisplay">
+	<td class="nodisplay"><div id="panel2">Bananas</div></td>
+</tr>
 <tr>
-    <td><a href="oranges">Edit</a></td>
-    <td><div id="panel3">Oranges</div></td>
+    <td><a href="panel3">Edit</a></td>
     <td>Blah blah blah blah</td>
     <td>12.56</td>
 </tr>
-</table>
-
-		
+<tr class="nodisplay">
+	<td class="nodisplay"><div id="panel3">Oranges</div></td>
+</tr>
+</table>	
 	</body>
 </html>
 
