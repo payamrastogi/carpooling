@@ -1,7 +1,72 @@
-<?php include("header.php"); ?>
+<?php include("connect.php"); ?>
+
+<?php
+$result = mysql_query("SELECT * FROM ADS");
+$count = mysql_num_rows($result);
+
+// echo $count . " number of rows selected";
+$i = 1;
+
+?>
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Car Pooling</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+    <style>
+    /*#panel1,#panel2,#panel3*/
+<?php
+while($row = mysql_fetch_array($result))
+  {
+    if($i != 1)
+      echo ",";
+  echo "#panel" . $i;
+  $i = $i + 1;
+  }
+?>
+{
+padding:0px;
+display:none;
+}
+.nodisplay tr td
+{
+  background-color: #ffffff;
+  padding: 50px 50px;
+}
+    </style>
+    <script>
+      $(document).ready(function() {
+
+    $('#searchResults tr').click(function() {
+        var href = $(this).find("a").attr("href");
+    //alert(href);
+    var div = $(this).find("div").attr("id");
+    //alert(div);
+        if(href) {
+           // window.location = href;
+     // alert(href);
+       $("#"+href).slideToggle();
+        }
+    });
+
+});
+    </script>
+
+  </head>
+  <body>
 <?php include("menu.php"); ?>
 
+
 <!-- start of hero unit container -->
+
 <center>
 <div class="hero-unit">
   <h1>Welcome to Car Pooling World</h1>
@@ -19,51 +84,51 @@
 <!-- start of container -->
 
 <div class="container">
-	
-	<!-- search form start here-->
-	<form class="form-horizontal">
-		<fieldset>
-			<legend>Search</legend>
+    
+    <!-- search form start here-->
+    <form class="form-horizontal">
+        <fieldset>
+            <legend>Search</legend>
 
-			<!-- Company Details -->
-			<div class="control-group">
-				<label class="control-label" for="company">Company</label>
-				<div class="controls">
-					<select>
-						<option>Accenture</option>
-						<option>IBM</option>
-						<option>CISCO</option>
-						<option>TCS</option>
-						<option>FORD</option>
-					</select>
-				</div>
-			</div>
+            <!-- Company Details -->
+            <div class="control-group">
+                <label class="control-label" for="company">Company</label>
+                <div class="controls">
+                    <select>
+                        <option>Accenture</option>
+                        <option>IBM</option>
+                        <option>CISCO</option>
+                        <option>TCS</option>
+                        <option>FORD</option>
+                    </select>
+                </div>
+            </div>
 
-			<!-- City Details -->
-			<div class="control-group">
-				<label class="control-label" for="city">City</label>
-				<div class="controls">
-					<select>
-						<option>Jaipur</option>
-						<option>Delhi</option>
-						<option>Noida</option>
-						<option>Banglore</option>
-						<option>Hyderabad</option>
-					</select>
-				</div>
-			</div>
+            <!-- City Details -->
+            <div class="control-group">
+                <label class="control-label" for="city">City</label>
+                <div class="controls">
+                    <select>
+                        <option>Jaipur</option>
+                        <option>Delhi</option>
+                        <option>Noida</option>
+                        <option>Banglore</option>
+                        <option>Hyderabad</option>
+                    </select>
+                </div>
+            </div>
 
 <!-- Building Details -->
-			<div class="control-group">
-				<label class="control-label" for="buildingLocation">Building Location</label>
-				<div class="controls">
-					<select>
-						<option>Udyog Vihar</option>
-						<option>DLF Cyber City</option>
-						<option>InfoPark</option>
-					</select>
-				</div>
-			</div>
+            <div class="control-group">
+                <label class="control-label" for="buildingLocation">Building Location</label>
+                <div class="controls">
+                    <select>
+                        <option>Udyog Vihar</option>
+                        <option>DLF Cyber City</option>
+                        <option>InfoPark</option>
+                    </select>
+                </div>
+            </div>
 
 <!-- Multiple Radios -->
 <div class="control-group">
@@ -80,43 +145,75 @@
   </div>
 </div>
 
-			<div class="control-group">
-				<div class="controls">
-					
-					<button type="submit" class="btn"><i class="icon-road"></i> Find a Car</button>
-				</div>
-			</div>
-		</fieldset>
-	</form>
+            <div class="control-group">
+                <div class="controls">
+                    
+                    <button type="submit" class="btn"><i class="icon-road"></i> Find a Car</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
 
-	<!-- search form ends here -->
+    <!-- search form ends here -->
 
 <!-- search results start here -->
 
 <h4>Search Results : </h4>
 
 <div class="well">
-    <table class="table">
+    <table class="table" id="searchResults">
       <thead>
         <tr>
           <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
-          <th style="width: 36px;"></th>
+          <th>Location From</th>
+          <th>Start Time</th>
+          <th>Return Time</th>
+          <!-- <th style="width: 36px;">No. of Seats</th> -->
+          <th>No. of Seats</th>
         </tr>
       </thead>
       <tbody>
+
+<?php
+$i = 1;
+$sno = 1;
+$search = mysql_query("SELECT * FROM ADS");
+while($display = mysql_fetch_array($search))
+  {
+?>
         <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Tompson</td>
-          <td>the_mark7</td>
           <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
-              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+                <a href="<?php echo 'panel' . $i; ?>"> <?php echo $sno; ?> </a> 
+          </td>
+          <td>
+               <?php echo $display['location_from']; ?>
+          </td>
+          <td>
+               <?php echo $display['location_to']; ?>
+          </td>
+          <td>
+               <?php echo $display['return_time']; ?>
+          </td>
+          <td>
+               <?php echo $display['number_of_seats']; ?>
           </td>
         </tr>
+        <tr class="nodisplay">
+            <td class="nodisplay">
+               <div id="<?php echo 'panel' . $i; ?>">
+                  <?php echo $display['location_from']; ?>
+                </div>
+            </td>
+        </tr>
+<?php
+$sno = $sno + 1;
+$i = $i + 1;
+}
+
+?>
+
+
+
         <tr>
           <td>2</td>
           <td>Ashley</td>

@@ -28,7 +28,7 @@ display:none;
 .nodisplay tr td
 {
 	background-color: #ffffff;
-	padding: 0px 0px;
+	padding: 50px 50px;
 }
 		</style>
 		<script>
