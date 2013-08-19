@@ -1,0 +1,25 @@
+1) login :
+- userId
+- username
+- password
+- email
+- activation
+
+2) ads : 
+- userId (Foreign Key to table login)
+- adId (Unique to ads)
+- Company name
+- Location From
+- Location To
+- Frequency
+- Car Model
+- Registration Number (Does this thing really matter - this can be excluded)
+- Number of Seats
+- Seats Available (Redundant to above)
+- Start Time
+- Return Time
+- One Two way 
+- Description
+- Ad Status ( Available or Wanted )
+-
+-
